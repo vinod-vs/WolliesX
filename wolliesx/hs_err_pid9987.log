@@ -1,0 +1,362 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0x000000010eb79231, pid=9987, tid=6659
+#
+# JRE version: Java(TM) SE Runtime Environment (10.0.2+13) (build 10.0.2+13)
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (10.0.2+13, mixed mode, tiered, compressed oops, g1 gc, bsd-amd64)
+# Problematic frame:
+# V  [libjvm.dylib+0x6a6231]  _ZN19ResolvedMethodTable10add_methodE6Handle+0x61
+#
+# No core dump will be written. Core dumps have been disabled. To enable core dumping, try "ulimit -c unlimited" before starting Java again
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.java.com/bugreport/crash.jsp
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -agentlib:jdwp=transport=dt_socket,address=127.0.0.1:53785,suspend=y,server=n -Dorg.jetbrains.run.directory=/Users/Q-Assure/Downloads/acessHq/src/test/resources/features -javaagent:/Users/Q-Assure/Library/Caches/IdeaIC2018.2/captureAgent/debugger-agent.jar=file:/private/var/folders/f6/vf2y3lw10y14fh1nz7pn5slc0000gq/T/capture.props -Dfile.encoding=UTF-8 cucumber.api.cli.Main --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvmSMFormatter --monochrome --glue stepdefs /Users/Q-Assure/Downloads/acessHq/src/test/resources/features/Weather.feature
+
+Host: MacBookPro12,1 x86_64 2700 MHz, 4 cores, 8G, Darwin 17.7.0
+Time: Sat Feb 16 23:58:17 2019 AEDT elapsed time: 255 seconds (0d 0h 4m 15s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00007fa877006800):  JavaThread "main" [_thread_in_vm, id=6659, stack(0x000000010f273000,0x000000010f373000)]
+
+Stack: [0x000000010f273000,0x000000010f373000],  sp=0x000000010f36f260,  free space=1008k
+Native frames: (J=compiled Java code, A=aot compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.dylib+0x6a6231]  _ZN19ResolvedMethodTable10add_methodE6Handle+0x61
+V  [libjvm.dylib+0x50fb1d]  _ZN8CallInfo24set_resolved_method_nameEP6Thread+0x5d
+V  [libjvm.dylib+0x50fa1e]  _ZN8CallInfoC2EP6MethodP5KlassP6Thread+0x1d6
+V  [libjvm.dylib+0x3de0e5]  _ZN24java_lang_StackFrameInfo18set_method_and_bciE6HandleRK12methodHandleiP6Thread+0x7f
+V  [libjvm.dylib+0x6db27d]  _ZN9StackWalk14fill_in_framesElR15BaseFrameStreamii14objArrayHandleRiP6Thread+0x369
+V  [libjvm.dylib+0x6dc26d]  _ZN9StackWalk14fetchNextBatchE6Handlellii14objArrayHandleP6Thread+0xd9
+V  [libjvm.dylib+0x44b96a]  JVM_MoreStackWalk+0x140
+j  java.lang.StackStreamFactory$AbstractStackWalker.fetchStackFrames(JJII[Ljava/lang/Object;)I+0 java.base@10.0.2
+j  java.lang.StackStreamFactory$AbstractStackWalker.fetchStackFrames(I)I+35 java.base@10.0.2
+j  java.lang.StackStreamFactory$AbstractStackWalker.getNextBatch()I+61 java.base@10.0.2
+j  java.lang.StackStreamFactory$AbstractStackWalker.peekFrame()Ljava/lang/Class;+32 java.base@10.0.2
+j  java.lang.StackStreamFactory$AbstractStackWalker.hasNext()Z+1 java.base@10.0.2
+j  java.lang.StackStreamFactory$StackFrameTraverser.tryAdvance(Ljava/util/function/Consumer;)Z+16 java.base@10.0.2
+j  java.util.stream.ReferencePipeline.forEachWithCancel(Ljava/util/Spliterator;Ljava/util/stream/Sink;)Z+13 java.base@10.0.2
+j  java.util.stream.AbstractPipeline.copyIntoWithCancel(Ljava/util/stream/Sink;Ljava/util/Spliterator;)Z+32 java.base@10.0.2
+j  java.util.stream.AbstractPipeline.copyInto(Ljava/util/stream/Sink;Ljava/util/Spliterator;)V+49 java.base@10.0.2
+j  java.util.stream.AbstractPipeline.wrapAndCopyInto(Ljava/util/stream/Sink;Ljava/util/Spliterator;)Ljava/util/stream/Sink;+13 java.base@10.0.2
+j  java.util.stream.FindOps$FindOp.evaluateSequential(Ljava/util/stream/PipelineHelper;Ljava/util/Spliterator;)Ljava/lang/Object;+14 java.base@10.0.2
+J 1746 c1 java.util.stream.AbstractPipeline.evaluate(Ljava/util/stream/TerminalOp;)Ljava/lang/Object; java.base@10.0.2 (94 bytes) @ 0x000000011daa1634 [0x000000011daa11e0+0x0000000000000454]
+j  java.util.stream.ReferencePipeline.findFirst()Ljava/util/Optional;+5 java.base@10.0.2
+j  java.util.logging.LogRecord$CallerFinder.lambda$get$1(Ljava/util/stream/Stream;)Ljava/util/Optional;+7 java.logging@10.0.2
+j  java.util.logging.LogRecord$CallerFinder$$Lambda$192.apply(Ljava/lang/Object;)Ljava/lang/Object;+8 java.logging@10.0.2
+j  java.lang.StackStreamFactory$StackFrameTraverser.consumeFrames()Ljava/lang/Object;+25 java.base@10.0.2
+j  java.lang.StackStreamFactory$AbstractStackWalker.doStackWalk(JIIII)Ljava/lang/Object;+78 java.base@10.0.2
+v  ~StubRoutines::call_stub
+V  [libjvm.dylib+0x3d8c0e]  _ZN9JavaCalls11call_helperEP9JavaValueRK12methodHandleP17JavaCallArgumentsP6Thread+0x216
+V  [libjvm.dylib+0x6dc085]  _ZN9StackWalk15fetchFirstBatchER15BaseFrameStream6Handleliii14objArrayHandleP6Thread+0x437
+V  [libjvm.dylib+0x6dbc2c]  _ZN9StackWalk4walkE6Handleliii14objArrayHandleP6Thread+0x176
+V  [libjvm.dylib+0x44b810]  JVM_CallStackWalk+0x19e
+j  java.lang.StackStreamFactory$AbstractStackWalker.callStackWalk(JIII[Ljava/lang/Object;)Ljava/lang/Object;+0 java.base@10.0.2
+j  java.lang.StackStreamFactory$AbstractStackWalker.beginStackWalk()Ljava/lang/Object;+31 java.base@10.0.2
+j  java.lang.StackStreamFactory$AbstractStackWalker.walk()Ljava/lang/Object;+8 java.base@10.0.2
+j  java.lang.StackWalker.walk(Ljava/util/function/Function;)Ljava/lang/Object;+10 java.base@10.0.2
+j  java.util.logging.LogRecord$CallerFinder.get()Ljava/util/Optional;+9 java.logging@10.0.2
+j  java.util.logging.LogRecord.inferCaller()V+12 java.logging@10.0.2
+j  java.util.logging.LogRecord.getSourceClassName()Ljava/lang/String;+8 java.logging@10.0.2
+j  java.util.logging.SimpleFormatter.format(Ljava/util/logging/LogRecord;)Ljava/lang/String;+12 java.logging@10.0.2
+j  java.util.logging.StreamHandler.publish(Ljava/util/logging/LogRecord;)V+14 java.logging@10.0.2
+j  java.util.logging.ConsoleHandler.publish(Ljava/util/logging/LogRecord;)V+2 java.logging@10.0.2
+j  java.util.logging.Logger.log(Ljava/util/logging/LogRecord;)V+90 java.logging@10.0.2
+j  java.util.logging.Logger.doLog(Ljava/util/logging/LogRecord;)V+46 java.logging@10.0.2
+j  java.util.logging.Logger.log(Ljava/util/logging/Level;Ljava/lang/String;)V+21 java.logging@10.0.2
+j  java.util.logging.Logger.info(Ljava/lang/String;)V+5 java.logging@10.0.2
+j  stepdefs.StepDefinitions.iLookUpAndReceiveTheWeatherForecast()V+280
+v  ~StubRoutines::call_stub
+V  [libjvm.dylib+0x3d8c0e]  _ZN9JavaCalls11call_helperEP9JavaValueRK12methodHandleP17JavaCallArgumentsP6Thread+0x216
+V  [libjvm.dylib+0x69b6ba]  _ZL6invokeP13InstanceKlassRK12methodHandle6Handleb14objArrayHandle9BasicTypeS5_bP6Thread+0x71d
+V  [libjvm.dylib+0x69af53]  _ZN10Reflection13invoke_methodEP7oopDesc6Handle14objArrayHandleP6Thread+0xf7
+V  [libjvm.dylib+0x4561bb]  JVM_InvokeMethod+0x1b2
+j  jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+0 java.base@10.0.2
+j  jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+100 java.base@10.0.2
+j  jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+6 java.base@10.0.2
+j  java.lang.reflect.Method.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+59 java.base@10.0.2
+j  cucumber.runtime.Utils$1.call()Ljava/lang/Object;+28
+j  cucumber.runtime.Timeout.timeout(Lcucumber/runtime/Timeout$Callback;J)Ljava/lang/Object;+7
+j  cucumber.runtime.Utils.invoke(Ljava/lang/Object;Ljava/lang/reflect/Method;J[Ljava/lang/Object;)Ljava/lang/Object;+20
+j  cucumber.runtime.java.JavaStepDefinition.execute(Lgherkin/I18n;[Ljava/lang/Object;)V+25
+j  cucumber.runtime.StepDefinitionMatch.runStep(Lgherkin/I18n;)V+24
+j  cucumber.runtime.Runtime.runStep(Ljava/lang/String;Lgherkin/formatter/model/Step;Lgherkin/formatter/Reporter;Lgherkin/I18n;)V+194
+j  cucumber.runtime.model.StepContainer.runStep(Lgherkin/formatter/model/Step;Lgherkin/formatter/Reporter;Lcucumber/runtime/Runtime;)V+17
+j  cucumber.runtime.model.StepContainer.runSteps(Lgherkin/formatter/Reporter;Lcucumber/runtime/Runtime;)V+35
+j  cucumber.runtime.model.CucumberScenario.run(Lgherkin/formatter/Formatter;Lgherkin/formatter/Reporter;Lcucumber/runtime/Runtime;)V+52
+j  cucumber.runtime.model.CucumberFeature.run(Lgherkin/formatter/Formatter;Lgherkin/formatter/Reporter;Lcucumber/runtime/Runtime;)V+58
+j  cucumber.runtime.Runtime.run()V+95
+j  cucumber.api.cli.Main.run([Ljava/lang/String;Ljava/lang/ClassLoader;)B+55
+j  cucumber.api.cli.Main.main([Ljava/lang/String;)V+7
+v  ~StubRoutines::call_stub
+V  [libjvm.dylib+0x3d8c0e]  _ZN9JavaCalls11call_helperEP9JavaValueRK12methodHandleP17JavaCallArgumentsP6Thread+0x216
+V  [libjvm.dylib+0x41856d]  _ZL17jni_invoke_staticP7JNIEnv_P9JavaValueP8_jobject11JNICallTypeP10_jmethodIDP18JNI_ArgumentPusherP6Thread+0x12d
+V  [libjvm.dylib+0x41ae0d]  jni_CallStaticVoidMethod+0x183
+C  [java+0x5034]  JavaMain+0xb9f
+C  [libsystem_pthread.dylib+0x3661]  _pthread_body+0x154
+C  [libsystem_pthread.dylib+0x350d]  _pthread_body+0x0
+C  [libsystem_pthread.dylib+0x2bf9]  thread_start+0xd
+C  0x0000000000000000
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  java.lang.StackStreamFactory$AbstractStackWalker.fetchStackFrames(JJII[Ljava/lang/Object;)I+0 java.base@10.0.2
+j  java.lang.StackStreamFactory$AbstractStackWalker.fetchStackFrames(I)I+35 java.base@10.0.2
+j  java.lang.StackStreamFactory$AbstractStackWalker.getNextBatch()I+61 java.base@10.0.2
+j  java.lang.StackStreamFactory$AbstractStackWalker.peekFrame()Ljava/lang/Class;+32 java.base@10.0.2
+j  java.lang.StackStreamFactory$AbstractStackWalker.hasNext()Z+1 java.base@10.0.2
+j  java.lang.StackStreamFactory$StackFrameTraverser.tryAdvance(Ljava/util/function/Consumer;)Z+16 java.base@10.0.2
+j  java.util.stream.ReferencePipeline.forEachWithCancel(Ljava/util/Spliterator;Ljava/util/stream/Sink;)Z+13 java.base@10.0.2
+j  java.util.stream.AbstractPipeline.copyIntoWithCancel(Ljava/util/stream/Sink;Ljava/util/Spliterator;)Z+32 java.base@10.0.2
+j  java.util.stream.AbstractPipeline.copyInto(Ljava/util/stream/Sink;Ljava/util/Spliterator;)V+49 java.base@10.0.2
+j  java.util.stream.AbstractPipeline.wrapAndCopyInto(Ljava/util/stream/Sink;Ljava/util/Spliterator;)Ljava/util/stream/Sink;+13 java.base@10.0.2
+j  java.util.stream.FindOps$FindOp.evaluateSequential(Ljava/util/stream/PipelineHelper;Ljava/util/Spliterator;)Ljava/lang/Object;+14 java.base@10.0.2
+J 1746 c1 java.util.stream.AbstractPipeline.evaluate(Ljava/util/stream/TerminalOp;)Ljava/lang/Object; java.base@10.0.2 (94 bytes) @ 0x000000011daa1634 [0x000000011daa11e0+0x0000000000000454]
+j  java.util.stream.ReferencePipeline.findFirst()Ljava/util/Optional;+5 java.base@10.0.2
+j  java.util.logging.LogRecord$CallerFinder.lambda$get$1(Ljava/util/stream/Stream;)Ljava/util/Optional;+7 java.logging@10.0.2
+j  java.util.logging.LogRecord$CallerFinder$$Lambda$192.apply(Ljava/lang/Object;)Ljava/lang/Object;+8 java.logging@10.0.2
+j  java.lang.StackStreamFactory$StackFrameTraverser.consumeFrames()Ljava/lang/Object;+25 java.base@10.0.2
+j  java.lang.StackStreamFactory$AbstractStackWalker.doStackWalk(JIIII)Ljava/lang/Object;+78 java.base@10.0.2
+v  ~StubRoutines::call_stub
+j  java.lang.StackStreamFactory$AbstractStackWalker.callStackWalk(JIII[Ljava/lang/Object;)Ljava/lang/Object;+0 java.base@10.0.2
+j  java.lang.StackStreamFactory$AbstractStackWalker.beginStackWalk()Ljava/lang/Object;+31 java.base@10.0.2
+j  java.lang.StackStreamFactory$AbstractStackWalker.walk()Ljava/lang/Object;+8 java.base@10.0.2
+j  java.lang.StackWalker.walk(Ljava/util/function/Function;)Ljava/lang/Object;+10 java.base@10.0.2
+j  java.util.logging.LogRecord$CallerFinder.get()Ljava/util/Optional;+9 java.logging@10.0.2
+j  java.util.logging.LogRecord.inferCaller()V+12 java.logging@10.0.2
+j  java.util.logging.LogRecord.getSourceClassName()Ljava/lang/String;+8 java.logging@10.0.2
+j  java.util.logging.SimpleFormatter.format(Ljava/util/logging/LogRecord;)Ljava/lang/String;+12 java.logging@10.0.2
+j  java.util.logging.StreamHandler.publish(Ljava/util/logging/LogRecord;)V+14 java.logging@10.0.2
+j  java.util.logging.ConsoleHandler.publish(Ljava/util/logging/LogRecord;)V+2 java.logging@10.0.2
+j  java.util.logging.Logger.log(Ljava/util/logging/LogRecord;)V+90 java.logging@10.0.2
+j  java.util.logging.Logger.doLog(Ljava/util/logging/LogRecord;)V+46 java.logging@10.0.2
+j  java.util.logging.Logger.log(Ljava/util/logging/Level;Ljava/lang/String;)V+21 java.logging@10.0.2
+j  java.util.logging.Logger.info(Ljava/lang/String;)V+5 java.logging@10.0.2
+j  stepdefs.StepDefinitions.iLookUpAndReceiveTheWeatherForecast()V+280
+v  ~StubRoutines::call_stub
+j  jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+0 java.base@10.0.2
+j  jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+100 java.base@10.0.2
+j  jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+6 java.base@10.0.2
+j  java.lang.reflect.Method.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+59 java.base@10.0.2
+j  cucumber.runtime.Utils$1.call()Ljava/lang/Object;+28
+j  cucumber.runtime.Timeout.timeout(Lcucumber/runtime/Timeout$Callback;J)Ljava/lang/Object;+7
+j  cucumber.runtime.Utils.invoke(Ljava/lang/Object;Ljava/lang/reflect/Method;J[Ljava/lang/Object;)Ljava/lang/Object;+20
+j  cucumber.runtime.java.JavaStepDefinition.execute(Lgherkin/I18n;[Ljava/lang/Object;)V+25
+j  cucumber.runtime.StepDefinitionMatch.runStep(Lgherkin/I18n;)V+24
+j  cucumber.runtime.Runtime.runStep(Ljava/lang/String;Lgherkin/formatter/model/Step;Lgherkin/formatter/Reporter;Lgherkin/I18n;)V+194
+j  cucumber.runtime.model.StepContainer.runStep(Lgherkin/formatter/model/Step;Lgherkin/formatter/Reporter;Lcucumber/runtime/Runtime;)V+17
+j  cucumber.runtime.model.StepContainer.runSteps(Lgherkin/formatter/Reporter;Lcucumber/runtime/Runtime;)V+35
+j  cucumber.runtime.model.CucumberScenario.run(Lgherkin/formatter/Formatter;Lgherkin/formatter/Reporter;Lcucumber/runtime/Runtime;)V+52
+j  cucumber.runtime.model.CucumberFeature.run(Lgherkin/formatter/Formatter;Lgherkin/formatter/Reporter;Lcucumber/runtime/Runtime;)V+58
+j  cucumber.runtime.Runtime.run()V+95
+j  cucumber.api.cli.Main.run([Ljava/lang/String;Ljava/lang/ClassLoader;)B+55
+j  cucumber.api.cli.Main.main([Ljava/lang/String;)V+7
+v  ~StubRoutines::call_stub
+
+siginfo: si_signo: 11 (SIGSEGV), si_code: 1 (SEGV_MAPERR), si_addr: 0x0000000000000008
+
+Register to memory mapping:
+
+RAX=0x0000000000000010 is an unknown value
+RBX=0x0000000000000000 is an unknown value
+RCX=0x0000000000000016 is an unknown value
+RDX=0x0000000000000000 is an unknown value
+RSP=0x000000010f36f260 is pointing into the stack for thread: 0x00007fa877006800
+RBP=0x000000010f36f280 is pointing into the stack for thread: 0x00007fa877006800
+RSI=0x0000000000000010 is an unknown value
+RDI=0x0000000747ff6680 is an oop
+java.lang.invoke.ResolvedMethodName 
+{0x0000000747ff6680} - klass: 'java/lang/invoke/ResolvedMethodName'
+R8 =0x0000000134216c78 is pointing into metadata
+R9 =0x000000011cddd128 is pointing into metadata
+R10=0x000000010ee30250: AssumeMP+0 in /Library/Java/JavaVirtualMachines/jdk-10.0.2.jdk/Contents/Home/lib/server/libjvm.dylib at 0x000000010e4d3000
+R11=0x0000000000000102 is an unknown value
+R12=0x00007fa877006800 is a thread
+R13=0x0000000000000019 is an unknown value
+R14=0x00007fa87550f490 is an unknown value
+R15=0x00007fa87800b2c8 is an unknown value
+
+
+Registers:
+RAX=0x0000000000000010, RBX=0x0000000000000000, RCX=0x0000000000000016, RDX=0x0000000000000000
+RSP=0x000000010f36f260, RBP=0x000000010f36f280, RSI=0x0000000000000010, RDI=0x0000000747ff6680
+R8 =0x0000000134216c78, R9 =0x000000011cddd128, R10=0x000000010ee30250, R11=0x0000000000000102
+R12=0x00007fa877006800, R13=0x0000000000000019, R14=0x00007fa87550f490, R15=0x00007fa87800b2c8
+RIP=0x000000010eb79231, EFLAGS=0x0000000000010202, ERR=0x0000000000000004
+  TRAPNO=0x000000000000000e
+
+Top of Stack: (sp=0x000000010f36f260)
+0x000000010f36f260:   00007fa87800b2c8 000000010f36f298
+0x000000010f36f270:   000000010f36f378 00000007c00eeb80
+0x000000010f36f280:   000000010f36f2d0 000000010e9e2b1d
+0x000000010f36f290:   000000010f36f2d0 000000011cde0178
+0x000000010f36f2a0:   00007fa877006800 000000011cde0178
+0x000000010f36f2b0:   000000010f36f378 000000011cde0178
+0x000000010f36f2c0:   0000000000000001 00000007c00eeb80
+0x000000010f36f2d0:   000000010f36f350 000000010e9e2a1e
+0x000000010f36f2e0:   00000007c00eeb80 00007fa877006800
+0x000000010f36f2f0:   00007fa875601610 000000000e70a924
+0x000000010f36f300:   000000011cde0178 00007fa877006800
+0x000000010f36f310:   000000011cde0178 00007fa877006800
+0x000000010f36f320:   000000011cde0178 00007fa87800b2c0
+0x000000010f36f330:   000000010f36f470 00007fa877006800
+0x000000010f36f340:   00007fa877006800 0000000747ff63c0
+0x000000010f36f350:   000000010f36f3f0 000000010e8b10e5
+0x000000010f36f360:   000000010ec9de9a 0000011800000008
+0x000000010f36f370:   00007fa87800b2b8 00000007c00eeb80
+0x000000010f36f380:   00000007c00eeb80 000000011cde0178
+0x000000010f36f390:   00007fa877006800 000000011cde0178
+0x000000010f36f3a0:   00007fa877006800 0000001900000001
+0x000000010f36f3b0:   0000000000000000 0000000000000000
+0x000000010f36f3c0:   0000000000000000 000000010f36f470
+0x000000010f36f3d0:   000000011cde0178 000000010f370238
+0x000000010f36f3e0:   000000010ebae56a 00007fa877006800
+0x000000010f36f3f0:   000000010f36f680 000000010ebae27d
+0x000000010f36f400:   85ec7619d5ffadcc 0000000000000000
+0x000000010f36f410:   0000000000000000 000000010f36f400
+0x000000010f36f420:   0000000000000000 000000020ee17100
+0x000000010f36f430:   000000010ee103d0 00000000547c1342
+0x000000010f36f440:   0000000000000000 0000000c33253c78
+0x000000010f36f450:   00007fa87800b228 000000010f36f6a4 
+
+Instructions: (pc=0x000000010eb79231)
+0x000000010eb79211:   79 18 0f b7 70 2e e8 10 72 d1 ff 48 89 c3 31 ff
+0x000000010eb79221:   4d 85 ff 74 03 49 8b 3f 48 89 de e8 71 9c d3 ff
+0x000000010eb79231:   48 8b 43 08 48 8b 40 08 48 8b 40 18 66 81 88 1a
+0x000000010eb79241:   01 00 00 00 80 31 d2 4d 85 ff 48 8b 3d d6 86 31 
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x00007fa8757ed990, length=15, elements={
+0x00007fa877006800, 0x00007fa876006800, 0x00007fa8758bb000, 0x00007fa876806800,
+0x00007fa876807800, 0x00007fa87600b800, 0x00007fa876815000, 0x00007fa8758b7000,
+0x00007fa875930000, 0x00007fa8770f2000, 0x00007fa8760e5000, 0x00007fa876950000,
+0x00007fa877264000, 0x00007fa876951000, 0x00007fa8763e9800
+}
+
+Java Threads: ( => current thread )
+=>0x00007fa877006800 JavaThread "main" [_thread_in_vm, id=6659, stack(0x000000010f273000,0x000000010f373000)]
+  0x00007fa876006800 JavaThread "Reference Handler" daemon [_thread_blocked, id=17923, stack(0x000070000754e000,0x000070000764e000)]
+  0x00007fa8758bb000 JavaThread "Finalizer" daemon [_thread_blocked, id=17411, stack(0x0000700007651000,0x0000700007751000)]
+  0x00007fa876806800 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=42755, stack(0x00007000077d7000,0x00007000078d7000)]
+  0x00007fa876807800 JavaThread "C2 CompilerThread0" daemon [_thread_blocked, id=23043, stack(0x00007000078da000,0x00007000079da000)]
+  0x00007fa87600b800 JavaThread "C2 CompilerThread1" daemon [_thread_blocked, id=23811, stack(0x00007000079dd000,0x0000700007add000)]
+  0x00007fa876815000 JavaThread "C1 CompilerThread2" daemon [_thread_blocked, id=24067, stack(0x0000700007ae0000,0x0000700007be0000)]
+  0x00007fa8758b7000 JavaThread "Sweeper thread" daemon [_thread_blocked, id=24835, stack(0x0000700007be3000,0x0000700007ce3000)]
+  0x00007fa875930000 JavaThread "JDWP Event Helper Thread" daemon [_thread_blocked, id=41219, stack(0x0000700007de9000,0x0000700007ee9000)]
+  0x00007fa8770f2000 JavaThread "Common-Cleaner" daemon [_thread_blocked, id=40195, stack(0x0000700007fef000,0x00007000080ef000)]
+  0x00007fa8760e5000 JavaThread "Service Thread" daemon [_thread_blocked, id=39427, stack(0x00007000080f2000,0x00007000081f2000)]
+  0x00007fa876950000 JavaThread "Exec Default Executor" daemon [_thread_blocked, id=3079, stack(0x00007000082f8000,0x00007000083f8000)]
+  0x00007fa877264000 JavaThread "process reaper" daemon [_thread_in_native, id=38659, stack(0x0000700006824000,0x0000700006848000)]
+  0x00007fa876951000 JavaThread "Exec Stream Pumper" daemon [_thread_in_native, id=27139, stack(0x00007000083fb000,0x00007000084fb000)]
+  0x00007fa8763e9800 JavaThread "Exec Stream Pumper" daemon [_thread_in_native, id=37891, stack(0x00007000084fe000,0x00007000085fe000)]
+
+Other Threads:
+  0x00007fa876005800 VMThread "VM Thread" [stack: 0x000070000744b000,0x000070000754b000] [id=14339]
+  0x00007fa8770a8800 WatcherThread [stack: 0x00007000081f5000,0x00007000082f5000] [id=26371]
+  0x00007fa877014800 GCTaskThread "GC Thread#0" [stack: 0x000070000692a000,0x0000700006a2a000] [id=11267]
+  0x00007fa877015000 GCTaskThread "GC Thread#1" [stack: 0x0000700006a2d000,0x0000700006b2d000] [id=20995]
+  0x00007fa877016000 GCTaskThread "GC Thread#2" [stack: 0x0000700006b30000,0x0000700006c30000] [id=20483]
+  0x00007fa877016800 GCTaskThread "GC Thread#3" [stack: 0x0000700006c33000,0x0000700006d33000] [id=19971]
+  0x00007fa87703f800 ConcurrentGCThread "G1 Main Marker" [stack: 0x0000700006d36000,0x0000700006e36000] [id=11523]
+  0x00007fa877040000 ConcurrentGCThread "G1 Conc#0" [stack: 0x0000700006e39000,0x0000700006f39000] [id=12291]
+  0x00007fa875868800 ConcurrentGCThread "G1 Refine#0" [stack: 0x0000700006f3c000,0x000070000703c000] [id=12803]
+  0x00007fa876018000 ConcurrentGCThread "G1 Refine#1" [stack: 0x000070000703f000,0x000070000713f000] [id=19203]
+  0x00007fa876019000 ConcurrentGCThread "G1 Refine#2" [stack: 0x0000700007142000,0x0000700007242000] [id=18947]
+  0x00007fa876019800 ConcurrentGCThread "G1 Refine#3" [stack: 0x0000700007245000,0x0000700007345000] [id=13571]
+  0x00007fa877041000 ConcurrentGCThread "G1 Young RemSet Sampling" [stack: 0x0000700007348000,0x0000700007448000] [id=14083]
+
+Threads with active compile tasks:
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x00007fa87550f490] ResolvedMethodTable_lock - owner thread: 0x00007fa877006800
+
+Heap address: 0x0000000740000000, size: 2048 MB, Compressed Oops mode: Zero based, Oop shift amount: 3
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 3
+Compressed class space size: 1073741824 Address: 0x00000007c0000000
+
+Heap:
+ garbage-first heap   total 131072K, used 23662K [0x0000000740000000, 0x00000007c0000000)
+  region size 1024K, 3 young (3072K), 2 survivors (2048K)
+ Metaspace       used 34774K, capacity 36072K, committed 36352K, reserved 1081344K
+  class space    used 4114K, capacity 4701K, committed 4736K, reserved 1048576K
+Heap Regions: E=young(eden), S=young(survivor), O=old, HS=humongous(starts), HC=humongous(continues), CS=collection set, F=free, A=archive, TS=gc time stamp, AC=allocation context, TAMS=top-at-mark-start (previous, next)
+|   0|0x0000000740000000, 0x0000000740100000, 0x0000000740100000|100%| O|  |TS  0|AC  0|TAMS 0x0000000740100000, 0x0000000740100000|
+|   1|0x0000000740100000, 0x0000000740200000, 0x0000000740200000|100%| O|  |TS  0|AC  0|TAMS 0x0000000740200000, 0x0000000740200000|
+|   2|0x0000000740200000, 0x0000000740300000, 0x0000000740300000|100%| O|  |TS  0|AC  0|TAMS 0x0000000740300000, 0x0000000740300000|
+|   3|0x0000000740300000, 0x0000000740400000, 0x0000000740400000|100%| O|  |TS  0|AC  0|TAMS 0x0000000740400000, 0x0000000740400000|
+|   4|0x0000000740400000, 0x0000000740500000, 0x0000000740500000|100%| O|  |TS  0|AC  0|TAMS 0x0000000740500000, 0x0000000740500000|
+|   5|0x0000000740500000, 0x0000000740600000, 0x0000000740600000|100%| O|  |TS  0|AC  0|TAMS 0x0000000740600000, 0x0000000740600000|
+|   6|0x0000000740600000, 0x0000000740700000, 0x0000000740700000|100%| O|  |TS  0|AC  0|TAMS 0x0000000740700000, 0x0000000740700000|
+|   7|0x0000000740700000, 0x0000000740800000, 0x0000000740800000|100%| O|  |TS  0|AC  0|TAMS 0x0000000740800000, 0x0000000740800000|
+|   8|0x0000000740800000, 0x0000000740900000, 0x0000000740900000|100%| O|  |TS  0|AC  0|TAMS 0x0000000740900000, 0x0000000740900000|
+|   9|0x0000000740900000, 0x0000000740a00000, 0x0000000740a00000|100%| O|  |TS  0|AC  0|TAMS 0x0000000740a00000, 0x0000000740a00000|
+|  10|0x0000000740a00000, 0x0000000740b00000, 0x0000000740b00000|100%| O|  |TS  0|AC  0|TAMS 0x0000000740b00000, 0x0000000740b00000|
+|  11|0x0000000740b00000, 0x0000000740c00000, 0x0000000740c00000|100%| O|  |TS  0|AC  0|TAMS 0x0000000740c00000, 0x0000000740c00000|
+|  12|0x0000000740c00000, 0x0000000740d00000, 0x0000000740d00000|100%| O|  |TS  0|AC  0|TAMS 0x0000000740d00000, 0x0000000740d00000|
+|  13|0x0000000740d00000, 0x0000000740e00000, 0x0000000740e00000|100%| O|  |TS  0|AC  0|TAMS 0x0000000740e00000, 0x0000000740e00000|
+|  14|0x0000000740e00000, 0x0000000740f00000, 0x0000000740f00000|100%| O|  |TS  0|AC  0|TAMS 0x0000000740f00000, 0x0000000740f00000|
+|  15|0x0000000740f00000, 0x0000000741000000, 0x0000000741000000|100%| O|  |TS  0|AC  0|TAMS 0x0000000741000000, 0x0000000741000000|
+|  16|0x0000000741000000, 0x0000000741100000, 0x0000000741100000|100%| O|  |TS  0|AC  0|TAMS 0x0000000741100000, 0x0000000741100000|
+|  17|0x0000000741100000, 0x0000000741200000, 0x0000000741200000|100%| O|  |TS  0|AC  0|TAMS 0x0000000741200000, 0x0000000741200000|
+|  18|0x0000000741200000, 0x0000000741300000, 0x0000000741300000|100%| O|  |TS  0|AC  0|TAMS 0x0000000741300000, 0x0000000741300000|
+|  19|0x0000000741300000, 0x0000000741400000, 0x0000000741400000|100%| O|  |TS  0|AC  0|TAMS 0x0000000741400000, 0x0000000741400000|
+|  20|0x0000000741400000, 0x0000000741500000, 0x0000000741500000|100%| O|  |TS  0|AC  0|TAMS 0x0000000741500000, 0x0000000741500000|
+|  21|0x0000000741500000, 0x00000007415c3a00, 0x0000000741600000| 76%| O|  |TS  0|AC  0|TAMS 0x00000007415c3a00, 0x00000007415c3a00|
+|  22|0x0000000741600000, 0x0000000741600000, 0x0000000741700000|  0%| F|  |TS  0|AC  0|TAMS 0x0000000741600000, 0x0000000741600000|
+|  23|0x0000000741700000, 0x0000000741700000, 0x0000000741800000|  0%| F|  |TS  0|AC  0|TAMS 0x0000000741700000, 0x0000000741700000|
+|  24|0x0000000741800000, 0x0000000741800000, 0x0000000741900000|  0%| F|  |TS  0|AC  0|TAMS 0x0000000741800000, 0x0000000741800000|
+|  25|0x0000000741900000, 0x0000000741900000, 0x0000000741a00000|  0%| F|  |TS  0|AC  0|TAMS 0x0000000741900000, 0x0000000741900000|
+|  26|0x0000000741a00000, 0x0000000741a00000, 0x0000000741b00000|  0%| F|  |TS  0|AC  0|TAMS 0x0000000741a00000, 0x0000000741a00000|
+|  27|0x0000000741b00000, 0x0000000741b00000, 0x0000000741c00000|  0%| F|  |TS  0|AC  0|TAMS 0x0000000741b00000, 0x0000000741b00000|
+|  28|0x0000000741c00000, 0x0000000741c00000, 0x0000000741d00000|  0%| F|  |TS  0|AC  0|TAMS 0x0000000741c00000, 0x0000000741c00000|
+|  29|0x0000000741d00000, 0x0000000741d00000, 0x0000000741e00000|  0%| F|  |TS  0|AC  0|TAMS 0x0000000741d00000, 0x0000000741d00000|
+|  30|0x0000000741e00000, 0x0000000741e00000, 0x0000000741f00000|  0%| F|  |TS  0|AC  0|TAMS 0x0000000741e00000, 0x0000000741e00000|
+|  31|0x0000000741f00000, 0x0000000741f00000, 0x0000000742000000|  0%| F|  |TS  0|AC  0|TAMS 0x0000000741f00000, 0x0000000741f00000|
+|  32|0x0000000742000000, 0x0000000742000000, 0x0000000742100000|  0%| F|  |TS  0|AC  0|TAMS 0x0000000742000000, 0x0000000742000000|
+|  33|0x0000000742100000, 0x0000000742100000, 0x0000000742200000|  0%| F|  |TS  0|AC  0|TAMS 0x0000000742100000, 0x0000000742100000|
+|  34|0x0000000742200000, 0x0000000742200000, 0x0000000742300000|  0%| F|  |TS  0|AC  0|TAMS 0x0000000742200000, 0x0000000742200000|
+|  35|0x0000000742300000, 0x0000000742300000, 0x0000000742400000|  0%| F|  |TS  0|AC  0|TAMS 0x0000000742300000, 0x0000000742300000|
+|  36|0x0000000742400000, 0x0000000742400000, 0x0000000742500000|  0%| F|  |TS  0|AC  0|TAMS 0x0000000742400000, 0x0000000742400000|
+|  37|0x0000000742500000, 0x0000000742500000, 0x0000000742600000|  0%| F|  |TS  0|AC  0|TAMS 0x0000000742500000, 0x0000000742500000|
+|  38|0x0000000742600000, 0x0000000742600000, 0x0000000742700000|  0%| F|  |TS  0|AC  0|TAMS 0x0000000742600000, 0x0000000742600000|
+|  39|0x0000000742700000, 0x0000000742700000, 0x0000000742800000|  0%| F|  |TS  0|AC  0|TAMS 0x0000000742700000, 0x0000000742700000|
+|  40|0x0000000742800000, 0x0000000742800000, 0x0000000742900000|  0%| F|  |TS  0|AC  0|TAMS 0x0000000742800000, 0x0000000742800000|
+|  41|0x0000000742900000, 0x0000000742900000, 0x0000000742a00000|  0%| F|  |TS  0|AC  0|TAMS 0x0000000742900000, 0x0000000742900000|
+|  42|0x0000000742a00000, 0x0000000742a00000, 0x0000000742b00000|  0%| F|  |TS  0|AC  0|TAMS 0x0000000742a00000, 0x0000000742a00000|
+|  43|0x0000000742b00000, 0x0000000742b00000, 0x0000000742c00000|  0%| F|  |TS  0|AC  0|TAMS 0x0000000742b00000, 0x0000000742b00000|
+|  44|0x0000000742c00000, 0x0000000742c00000, 0x0000000742d00000|  0%| F|  |TS  0|AC  0|TAMS 0x0000000742c00000, 0x0000000742c00000|
+|  45|0x0000000742d00000, 0x0000000742d00000, 0x0000000742e00000|  0%| F|  |TS  0|AC  0|TAMS 0x0000000742d00000, 0x0000000742d00000|
+|  46|0x0000000742e00000, 0x0000000742e00000, 0x0000000742f00000|  0%| F|  |TS  0|AC  0|TAMS 0x0000000742e00000, 0x0000000742e00000|
+|  47|0x0000000742f00000, 0x0000000742f00000, 0x0000000743000000|  0%| F|  |TS  0|AC  0|TAMS 0x0000000742f00000, 0x0000000742f00000|
+|  48|0x0000000743000000, 0x0000000743000000, 0x0000000743100000|  0%| F|  |TS  0|AC  0|TAMS 0x0000000743000000, 0x0000000743000000|
+|  49|0x0000000743100000, 0x0000000743100000, 0x0000000743200000|  0%| F|  |TS  0|AC  0|TAMS 0x0000000743100000, 0x0000000743100000|
+|  50|0x0000000743200000, 0x0000000743200000, 0x0000000743300000|  0%| F|  |TS  0|AC  0|TAMS 0x0000000743200000, 0x0000000743200000|
+|  51|0x0000000743300000, 0x0000000743300000, 0x0000000743400000|  0%| F|  |TS  0|AC  0|TAMS 0x0000000743300000, 0x0000000743300000|
+|  52|0x0000000743400000, 0x0000000743400000, 0x0000000743500000|  0%| F|  |TS  0|AC  0|TAMS 0x0000000743400000, 0x0000000743400000|
+|  53|0x0000000743500000, 0x0000000743500000, 0x0000000743600000|  0%| F|  |TS  0|AC  0|TAMS 0x0000000743500000, 0x0000000743500000|
+|  54|0x0000000743600000, 0x0000000743600000, 0x0000000743700000|  0%| F|  |TS  0|AC  0|TAMS 0x0000000743600000, 0x0000000743600000|
+|  55|0x0000000743700000, 0x0000000743700000, 0x0000000743800000|  0%| F|  |TS  0|AC  0|TAMS 0x0000000743700000, 0x0000000743700000|
+|  56|0x0000000743800000, 0x0000000743800000, 0x0000000743900000|  0%| F|  |TS  0|AC  0|TAMS 0x0000000743800000, 0x0000000743800000|
+|  57|0x0000000743900000, 0x0000000743900000, 0x0000000743a00000|  0%| F|  |TS  0|AC  0|TAMS 0x0000000743900000, 0x0000000743900000|
+|  58|0x0000000743a00000, 0x0000000743a00000, 0x0000000743b00000|  0%| F|  |TS  0|AC  0|TAMS 0x0000000743a00000, 0x0000000743a00000|
+|  59|0x0000000743b00000, 0x0000000743b00000, 0x0000000743c00000|  0%| F|  |TS  0|AC  0|TAMS 0x0000000743b00000, 0x0000000743b00000|
+|  60|0x0000000743c00000, 0x0000000743c00000, 0x0000000743d00000|  0%| F|  |TS  0|AC  0|TAMS 0x0000000743c00000, 0x0000000743c00000|
+|  61|0x0000000743d00000, 0x0000000743d00000, 0x0000000743e00000|  0%| F|  |TS  0|AC  0|TAMS 0x0000000743d00000, 0x0000000743d00000|
+|  62|0x0000000743e00000, 0x0000000743e00000, 0x0000000743f00000|  0%| F|  |TS  0|AC  0|TAMS 0x0000000743e00000, 0x0000000743e00000|
+|  63|0x0000000743f00000, 0x0000000743f00000, 0x0000000744000000|  0%| F|  |TS  0|AC  0|TAMS 0x0000000743f00000, 0x0000000743f00000|
+|  64|0x0000000744000000, 0x0000000744000000, 0x0000000744100000|  0%| F|  |TS  0|AC  0|TAMS 0x0000000744000000, 0x0000000744000000|
+|  65|0x0000000744100000, 0x0000000744100000, 0x0000000744200000|  0%| F|  |TS  0|AC  0|TAMS 0x0000000744100000, 0x0000000744100000|
+|  66|0x0000000744200000, 0x0000000744200000, 0x0000000744300000|  0%| F|  |TS  0|AC  0|TAMS 0x0000000744200000, 0x0000000744200000|
+|  67|0x0000000744300000, 0x0000000744300000, 0x0000000744400000|  0%| F|  |TS  0|AC  0|TAMS 0x0000000744300000, 0x0000000744300000|
+|  68|0x0000000744400000, 0x0000000744400000, 0x0000000744500000|  0%| F|  |TS  0|AC  0|TAMS 0x0000000744400000, 0x0000000744400000|
+|  69|0x0000000744500000, 0x0000000744500000, 0x0000000744600000|  0%| F|  |TS  0|AC  0|TAMS 0x0000000744500000, 0x0000000744500000|
+|  70|0x0000000744600000, 0x0000000744600000, 0x0000000744700000|  0%
