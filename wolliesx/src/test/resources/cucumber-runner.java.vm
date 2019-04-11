@@ -1,0 +1,34 @@
+package $packageName;
+
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
+import org.junit.runner.RunWith;
+
+import cucumber.api.CucumberOptions;
+import cucumber.api.junit.Cucumber;
+import java.io.File;
+
+@RunWith(Cucumber.class)
+@CucumberOptions(
+        strict = $strict,
+        features = {"$featureFile"},
+        plugin = #stringArray($plugins),
+        monochrome = $monochrome,
+    #if(!$featureFile.contains(".feature:") && $tags)
+            tags = #stringArray($tags),
+    #end
+        glue = #stringArray($glue))
+
+public class $className {
+
+@BeforeClass
+public static void beforeClass(){
+
+        }
+
+@AfterClass
+public static void afterClass(){
+
+     }
+
+}
